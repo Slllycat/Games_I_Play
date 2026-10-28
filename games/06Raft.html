@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>COOL WEBSITE</title>
+            <style>
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+            .white {
+                color: black;
+                font-size: 20px;
+                font-family: Arial;
+                font-weight: bold;
+                background-color:rgb(250, 242, 212);
+            }
+            .white p{
+                color: plum;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+            .white h1{
+                color: plum;
+                font-size: 50px;
+                -webkit-text-stroke: 2px purple;
+            }
+            .white li{
+                color: plum;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+
+            .black {
+                color: black;
+                font-size: 20px;
+                font-family: Arial;
+                font-weight: bold;
+                background-color:rgb(14, 0, 30);
+            }
+            .black p{
+                color: darkorchid;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+            .black h1{
+                color: darkorchid;
+                font-size: 50px;
+                -webkit-text-stroke: 2px purple;
+            }
+            .black li{
+                color: darkorchid;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+
+            .box {
+                width: 400px;
+                padding: 10px;
+                border: 3px solid purple;
+                border-radius: 15px;
+                cursor: pointer;
+            }
+            .white .box{
+                background: pink;
+            }
+            .black .box{
+                background: plum;
+            }
+            .modebutton {
+                position:fixed;
+                top: 20px;
+                right: 20px;
+
+                background:none;
+                border: none;
+                padding: 0;
+                cursor:pointer;
+            }
+            .white .button {
+                color:inherit;
+                background-color: pink;
+                border: 3px solid purple;
+                border-radius: 15px;
+                padding: 2px 25px;
+                font-size: 20px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .black .button {
+                color:inherit;
+                background-color: plum;
+                border: 3px solid purple;
+                border-radius: 15px;
+                padding: 2px 25px;
+                cursor: pointer;
+            }
+            </style>
+    </head>
+    <body>
+        <h1>Raft</h1>
+        <p>This cute site is about Raft</p>
+        <details class="box">
+            <summary>Playtime</summary>
+            <p>I have 130 hours on this and a full playthrough through the story :O </p>
+        </details>
+        <details class="box">
+            <summary>Gameplay</summary>
+            <p>So this game is about beeing stranded on a huge ocean everywhere ( this one is multiplayer to) and you can hook trash out of the ocean the make your raft bigger and survive.</p>
+            <p>There is also a story and archievments to fully play the game. Which take for a chill playthrough about 100 hours</p>
+        </details>
+        <details class="box">
+            <summary>A few photos :O</summary>
+            <p>Here are 3 cool pictures of the game :D</p>
+            <img src="../pic/raft01.jpg" width="100">
+            <img src="../pic/raft02.jpg" width="100">
+            <img src="../pic/raft03.jpg" width="100">
+        </details>
+        <details class="box">
+            <summary>Where can i get it and how much does it cost</summary>
+            <p>There is no free demo and the full game costs 20.49€</p>
+            <a href="https://store.steampowered.com/app/648800/Raft/" target="_blank"><p>HERE TO STEAM STORE</p></a>
+        </details>
+        <br>
+        <button class=button><a href="../openthis.html"><p>Go back</p></a></button>
+        <br>
+        <button class=modebutton onclick="switchmode()"><img id="mode" src="../pic/moon.png" width="50"></button>
+        <script>
+            let darkMode=localStorage.getItem("darkMode")==="true";
+            function update(){
+                if (darkMode){
+                    document.body.className="black";
+                    document.getElementById("mode").src="../pic/moon.png"
+                }else{
+                    document.body.className="white";
+                    document.getElementById("mode").src="../pic/sun.png"
+                }
+            }
+            function switchmode(){
+                darkMode=!darkMode
+                localStorage.setItem("darkMode", darkMode);
+                update()
+            }
+            update()
+        </script>
+    </body>
+</html>

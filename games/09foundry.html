@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>COOL WEBSITE</title>
+            <style>
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+            .white {
+                color: black;
+                font-size: 20px;
+                font-family: Arial;
+                font-weight: bold;
+                background-color:rgb(250, 242, 212);
+            }
+            .white p{
+                color: plum;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+            .white h1{
+                color: plum;
+                font-size: 50px;
+                -webkit-text-stroke: 2px purple;
+            }
+            .white li{
+                color: plum;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+
+            .black {
+                color: black;
+                font-size: 20px;
+                font-family: Arial;
+                font-weight: bold;
+                background-color:rgb(14, 0, 30);
+            }
+            .black p{
+                color: darkorchid;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+            .black h1{
+                color: darkorchid;
+                font-size: 50px;
+                -webkit-text-stroke: 2px purple;
+            }
+            .black li{
+                color: darkorchid;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+
+            .box {
+                width: 400px;
+                padding: 10px;
+                border: 3px solid purple;
+                border-radius: 15px;
+                cursor: pointer;
+            }
+            .white .box{
+                background: pink;
+            }
+            .black .box{
+                background: plum;
+            }
+            .modebutton {
+                position:fixed;
+                top: 20px;
+                right: 20px;
+
+                background:none;
+                border: none;
+                padding: 0;
+                cursor:pointer;
+            }
+            .white .button {
+                color:inherit;
+                background-color: pink;
+                border: 3px solid purple;
+                border-radius: 15px;
+                padding: 2px 25px;
+                font-size: 20px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .black .button {
+                color:inherit;
+                background-color: plum;
+                border: 3px solid purple;
+                border-radius: 15px;
+                padding: 2px 25px;
+                cursor: pointer;
+            }
+            </style>
+    </head>
+    <body>
+        <h1>Foundry</h1>
+        <p>This site is about a game called Foundry</p>
+        <details class="box">
+            <summary>Playtime</summary>
+            <p>This game is very niche and almost nobody knows it :O</p>
+            <p>I got 70 hours in it but to finish it you probably need about 10 times that :P</p>
+        </details>
+        <details class="box">
+            <summary>Gameplay</summary>
+            <p>The game is about you stranding on an alien planet but you have really high dept so you need to automate robots</p>
+            <p>So you can export to other galaxies and mkae money overall pretty cool but also there arent many tutorials so you dont always know what to do next</p>
+        </details>
+        <details class="box">
+            <summary>What does it look like ???</summary>
+            <p>Here are three pictures :P</p>
+            <img src="../pic/foundry01.jpg" width="100">
+            <img src="../pic/foundry02.jpg" width="100">
+            <img src="../pic/foundry03.jpg" width="100">
+        </details>
+        <details class="box">
+            <summary>Where can i get it</summary>
+            <p>There isnt a demo and the full game costs 29.9€</p>
+            <a href="https://store.steampowered.com/app/983870/FOUNDRY/" target="_blank"><p>HERE TO STEAM STORE</p></a>
+        </details>
+        <br>
+        <button class=button><a href="../openthis.html"><p>Go back</p></a></button>
+        <br>
+        <button class=modebutton onclick="switchmode()"><img id="mode" src="../pic/moon.png" width="50"></button>
+        <script>
+            let darkMode=localStorage.getItem("darkMode")==="true";
+            function update(){
+                if (darkMode){
+                    document.body.className="black";
+                    document.getElementById("mode").src="../pic/moon.png"
+                }else{
+                    document.body.className="white";
+                    document.getElementById("mode").src="../pic/sun.png"
+                }
+            }
+            function switchmode(){
+                darkMode=!darkMode
+                localStorage.setItem("darkMode", darkMode);
+                update()
+            }
+            update()
+        </script>
+    </body>
+</html>

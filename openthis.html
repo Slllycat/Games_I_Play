@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>COOL WEBSITE</title>
+        <meta charset="Utf-8">
+            <style>
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+            .white {
+                color: black;
+                font-size: 20px;
+                font-family: Arial;
+                font-weight: bold;
+                background-color:rgb(250, 242, 212);
+            }
+            .white p{
+                color: plum;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+            .white h1{
+                color: plum;
+                font-size: 50px;
+                -webkit-text-stroke: 2px purple;
+            }
+            .white li{
+                color: plum;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+
+            .black {
+                color: black;
+                font-size: 20px;
+                font-family: Arial;
+                font-weight: bold;
+                background-color:rgb(14, 0, 30);
+            }
+            .black p{
+                color: darkorchid;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+            .black h1{
+                color: darkorchid;
+                font-size: 50px;
+                -webkit-text-stroke: 2px purple;
+            }
+            .black li{
+                color: darkorchid;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+            .kitty {
+                position:fixed;
+                top:90px;
+                right:20px;
+                width:300px;
+            }
+            .box {
+                width: 400px;
+                padding: 10px;
+                border: 3px solid purple;
+                border-radius: 15px;
+                cursor: pointer;
+            }
+            .white .box{
+                background: pink;
+            }
+            .black .box{
+                background: plum;
+            }
+            .modebutton {
+                position:fixed;
+                top: 20px;
+                right: 20px;
+
+                background:none;
+                border: none;
+                padding: 0;
+                cursor:pointer;
+            }
+            .white .button {
+                color:inherit;
+                background-color: pink;
+                border: 3px solid purple;
+                border-radius: 15px;
+                padding: 12px 25px;
+                font-size: 20px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .black .button {
+                color:inherit;
+                background-color: plum;
+                border: 3px solid purple;
+                border-radius: 15px;
+                padding: 12px 25px;
+                cursor: pointer;
+            }
+            </style>
+    </head>
+    <body>
+        <h1>Infos :O</h1>
+        <p>Welcome to my hobbies :D</p>
+        <details class="box">
+            <summary>Click me first :P</summary>
+            <p>This is a website about one of my many hobbies. (not a lot honestly)</p>
+            <p>This is mainly about gaming, I also code a lot but I wont cover that here</p>
+            <p>At the top right you can toggle from light to dark mode and back I would switch a few times because I tried really hard on the colors. :D</p>
+        </details>
+        <br>
+        <details class="box">
+            <summary>Click me for the games.</summary>
+            <p>Here is a website for every game in my steam library.</p>
+            <p>Click the names for the website :]</p>
+            <p>(they are ordered from most to least playtime)</p>
+            <ul>
+                <li><a href="games/01Bongocat.html">Bongocat</a></li>
+                <li><a href="games/02superlinguinecatsimulatordeluxeonline.html">Super Linguine Cat Simulater deluxe online</a></li>
+                <li><a href="games/03Factorio.html">Factorio</a></li>
+                <li><a href="games/04Sheep.html">Finn Dorset's Institute For Livestock Replication</a></li>
+                <li><a href="games/05SST.html">Space Simulation Toolkit</a></li>
+                <li><a href="games/06Raft.html">Raft</a></li>
+                <li><a href="games/07astroneer.html">Astroneer</a></li>
+                <li><a href="games/08uploadlabs.html">Upload Labs</a></li>
+                <li><a href="games/09foundry.html">Foundry</a></li>
+                <li><a href="games/10peak.html">Peak</a></li>
+                <li><a href="games/11supermarket.html">Supermarket Together</a></li>
+            </ul>
+        </details>
+        <br>
+        <details class="box">
+            <summary>Click for why I like gaming :O</summary>
+            <p>I like gaming because there are unlimited things to do you can always do something else and I like beeing creative with that :D</p>
+        </details>
+        <br>
+        <details class="box">
+            <summary>Click me after for extras and Credits</summary>
+            <p>EXTRAS:</p>
+            <ul>
+                <li><p>The colors took 1.5 hours to get right D:</p></li>
+                <li><p>The moon and sun were colorless and got painted by me</p></li>
+                <li><p>If you noticed I really like cats and games where you dont have to do much.</p></li>
+                <li><p>This took about 3 hours of Music listening from Monday 21:36-1:14</p></li>
+            </ul>
+            <p>CREDITS</p>
+            <ul>
+                <li><p>Odin for the idea of the cards style :o</p></li>
+                <li>
+                    <p>
+                        ardiansyah from Flaticon here is a link
+                        <a href="https://www.flaticon.com/authors/ardiansyah" target="_blank">
+                            <p>TO THE SITE</p>
+                        </a>
+                    </p>
+                </li>
+                <li><p>Spotify for mental support :D</p></li>
+            </ul>
+        </details>
+        <button class=modebutton onclick="switchmode()"><img id="mode" src="pic/moon.png" width="50"></button>
+        <img class="kitty" src="pic/kitty.gif" width="300">
+        <script>
+            let darkMode=localStorage.getItem("darkMode")==="true";
+            function update(){
+                if (darkMode){
+                    document.body.className="black";
+                    document.getElementById("mode").src="pic/moon.png"
+                }else{
+                    document.body.className="white";
+                    document.getElementById("mode").src="pic/sun.png"
+                }
+            }
+            function switchmode(){
+                darkMode=!darkMode
+                localStorage.setItem("darkMode", darkMode);
+                update()
+            }
+            update()
+        </script>
+    </body>
+</html>

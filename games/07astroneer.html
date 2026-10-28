@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>COOL WEBSITE</title>
+            <style>
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+            .white {
+                color: black;
+                font-size: 20px;
+                font-family: Arial;
+                font-weight: bold;
+                background-color:rgb(250, 242, 212);
+            }
+            .white p{
+                color: plum;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+            .white h1{
+                color: plum;
+                font-size: 50px;
+                -webkit-text-stroke: 2px purple;
+            }
+            .white li{
+                color: plum;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+
+            .black {
+                color: black;
+                font-size: 20px;
+                font-family: Arial;
+                font-weight: bold;
+                background-color:rgb(14, 0, 30);
+            }
+            .black p{
+                color: darkorchid;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+            .black h1{
+                color: darkorchid;
+                font-size: 50px;
+                -webkit-text-stroke: 2px purple;
+            }
+            .black li{
+                color: darkorchid;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+
+            .box {
+                width: 400px;
+                padding: 10px;
+                border: 3px solid purple;
+                border-radius: 15px;
+                cursor: pointer;
+            }
+            .white .box{
+                background: pink;
+            }
+            .black .box{
+                background: plum;
+            }
+            .modebutton {
+                position:fixed;
+                top: 20px;
+                right: 20px;
+
+                background:none;
+                border: none;
+                padding: 0;
+                cursor:pointer;
+            }
+            .white .button {
+                color:inherit;
+                background-color: pink;
+                border: 3px solid purple;
+                border-radius: 15px;
+                padding: 2px 25px;
+                font-size: 20px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .black .button {
+                color:inherit;
+                background-color: plum;
+                border: 3px solid purple;
+                border-radius: 15px;
+                padding: 2px 25px;
+                cursor: pointer;
+            }
+            </style>
+    </head>
+    <body>
+        <h1>Astroneer</h1>
+        <p>This kawai site is about Astroneer</p>
+        <details class="box">
+            <summary>Playtime</summary>
+            <p>I got about 129 hours and I am not even remotly done with what i have planed :D
+            </p>
+        </details>
+        <details class="box">
+            <summary>Gameplay</summary>
+            <p>So you normaly just need to automate and survive after being stranded on a planet</p>
+            <p>There is also a huge story that take about 250 alone</p>
+            <p>normal play through the tech takes about 50 hours</p>
+            <p>So you can explore on 3d planets and research and have fun with friends</p>
+        </details>
+        <details class="box">
+            <summary>My project</summary>
+            <p>Okay every planet is destroyable so i started automating explosiv to destroy the moon of the main planet which is giangt it takes about 1 hour to go 1 loop around it and i want to destroy it all</p>
+            <p>Also i havent even started the story</p>
+        </details>
+        <details class="box">
+            <summary>What does astronner look like?</summary>
+            <p>Here are three pictures it is really cool :O</p>
+            <img src="../pic/astro01.jpg" width="100">
+            <img src="../pic/astro02.jpg" width="100">
+            <img src="../pic/astro03.jpg" width="100">
+        </details>
+        <details class="box">
+            <summary>Where can i get it</summary>
+            <p>The demo is free and the full game costs 29.9€</p>
+            <a href="https://store.steampowered.com/app/361420/ASTRONEER/" target="_blank"><p>HERE TO STEAM STORE</p></a>
+        </details>
+        <br>
+        <button class=button><a href="../openthis.html"><p>Go back</p></a></button>
+        <br>
+        <button class=modebutton onclick="switchmode()"><img id="mode" src="../pic/moon.png" width="50"></button>
+        <script>
+            let darkMode=localStorage.getItem("darkMode")==="true";
+            function update(){
+                if (darkMode){
+                    document.body.className="black";
+                    document.getElementById("mode").src="../pic/moon.png"
+                }else{
+                    document.body.className="white";
+                    document.getElementById("mode").src="../pic/sun.png"
+                }
+            }
+            function switchmode(){
+                darkMode=!darkMode
+                localStorage.setItem("darkMode", darkMode);
+                update()
+            }
+            update()
+        </script>
+    </body>
+</html>

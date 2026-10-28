@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>COOL WEBSITE</title>
+            <style>
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+            .white {
+                color: black;
+                font-size: 20px;
+                font-family: Arial;
+                font-weight: bold;
+                background-color:rgb(250, 242, 212);
+            }
+            .white p{
+                color: plum;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+            .white h1{
+                color: plum;
+                font-size: 50px;
+                -webkit-text-stroke: 2px purple;
+            }
+            .white li{
+                color: plum;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+
+            .black {
+                color: black;
+                font-size: 20px;
+                font-family: Arial;
+                font-weight: bold;
+                background-color:rgb(14, 0, 30);
+            }
+            .black p{
+                color: darkorchid;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+            .black h1{
+                color: darkorchid;
+                font-size: 50px;
+                -webkit-text-stroke: 2px purple;
+            }
+            .black li{
+                color: darkorchid;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+
+            .box {
+                width: 400px;
+                padding: 10px;
+                border: 3px solid purple;
+                border-radius: 15px;
+                cursor: pointer;
+            }
+            .white .box{
+                background: pink;
+            }
+            .black .box{
+                background: plum;
+            }
+            .modebutton {
+                position:fixed;
+                top: 20px;
+                right: 20px;
+
+                background:none;
+                border: none;
+                padding: 0;
+                cursor:pointer;
+            }
+            .white .button {
+                color:inherit;
+                background-color: pink;
+                border: 3px solid purple;
+                border-radius: 15px;
+                padding: 2px 25px;
+                font-size: 20px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .black .button {
+                color:inherit;
+                background-color: plum;
+                border: 3px solid purple;
+                border-radius: 15px;
+                padding: 2px 25px;
+                cursor: pointer;
+            }
+            </style>
+    </head>
+    <body>
+        <h1>Supermarket Together</h1>
+        <p>Supermarket Together is a free to play multiplayer game.</p>
+        <details class="box">
+            <summary>Playtime of mine</summary>
+            <p>This game is a connection between me and an old friend and we still play after 3 years</p>
+            <p>I got about 59 hours of playtime :D
+            </p>
+        </details>
+        <details class="box">
+            <summary>Gameplay(its a lot)</summary>
+            <p>You manage a Supermarket with friends it cant be that deep</p>
+        </details>
+        <details class="box">
+            <summary>What does it look like ???</summary>
+            <p>Here is a picture :O</p>
+            <img src="../pic/marktet01.jpg" width="300">
+        </details>
+        <details class="box">
+            <summary>Where can i get it</summary>
+            <p>The game is free and peak</p>
+            <a href="https://store.steampowered.com/app/2709570/Supermarket_Together/" target="_blank"><p>HERE TO STEAM STORE</p></a>
+        </details>
+        <br>
+        <button class=button><a href="../openthis.html"><p>Go back</p></a></button>
+        <br>
+        <button class=modebutton onclick="switchmode()"><img id="mode" src="../pic/moon.png" width="50"></button>
+        <script>
+            let darkMode=localStorage.getItem("darkMode")==="true";
+            function update(){
+                if (darkMode){
+                    document.body.className="black";
+                    document.getElementById("mode").src="../pic/moon.png"
+                }else{
+                    document.body.className="white";
+                    document.getElementById("mode").src="../pic/sun.png"
+                }
+            }
+            function switchmode(){
+                darkMode=!darkMode
+                localStorage.setItem("darkMode", darkMode);
+                update()
+            }
+            update()
+        </script>
+    </body>
+</html>

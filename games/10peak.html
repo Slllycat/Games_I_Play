@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>COOL WEBSITE</title>
+            <style>
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+            .white {
+                color: black;
+                font-size: 20px;
+                font-family: Arial;
+                font-weight: bold;
+                background-color:rgb(250, 242, 212);
+            }
+            .white p{
+                color: plum;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+            .white h1{
+                color: plum;
+                font-size: 50px;
+                -webkit-text-stroke: 2px purple;
+            }
+            .white li{
+                color: plum;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+
+            .black {
+                color: black;
+                font-size: 20px;
+                font-family: Arial;
+                font-weight: bold;
+                background-color:rgb(14, 0, 30);
+            }
+            .black p{
+                color: darkorchid;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+            .black h1{
+                color: darkorchid;
+                font-size: 50px;
+                -webkit-text-stroke: 2px purple;
+            }
+            .black li{
+                color: darkorchid;
+                font-size: 20px;
+                -webkit-text-stroke: 1px purple;
+            }
+
+            .box {
+                width: 400px;
+                padding: 10px;
+                border: 3px solid purple;
+                border-radius: 15px;
+                cursor: pointer;
+            }
+            .white .box{
+                background: pink;
+            }
+            .black .box{
+                background: plum;
+            }
+            .modebutton {
+                position:fixed;
+                top: 20px;
+                right: 20px;
+
+                background:none;
+                border: none;
+                padding: 0;
+                cursor:pointer;
+            }
+            .white .button {
+                color:inherit;
+                background-color: pink;
+                border: 3px solid purple;
+                border-radius: 15px;
+                padding: 2px 25px;
+                font-size: 20px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .black .button {
+                color:inherit;
+                background-color: plum;
+                border: 3px solid purple;
+                border-radius: 15px;
+                padding: 2px 25px;
+                cursor: pointer;
+            }
+            </style>
+    </head>
+    <body>
+        <h1>Peak</h1>
+        <p>Peak is a peak game :P and it is what this site is about.</p>
+        <details class="box">
+            <summary>Playtime</summary>
+            <p>I have gotten 63.3hours and i would have way more if you can play this game alone(techically i could but that is sad)</p>
+            <p>Yeah i have played it with a lot of diffrent people and you meet new people with this too :D
+            </p>
+        </details>
+        <details class="box">
+            <summary>Gameplay</summary>
+            <p>You climb mountains after a plane crash and need to reach the peak with your friends</p>
+            <p>Yeah i have played it with a lot of diffrent people and you meet new people with this too :D
+            </p>
+        </details>
+        <details class="box">
+            <summary>What does it look like to play ???</summary>
+            <p>3 random pictures from google</p>
+            <img src="../pic/peak01.jpg" width="100">
+            <img src="../pic/peak02.jpg" width="100">
+            <img src="../pic/peak03.jpg" width="100">
+        </details>
+        <details class="box">
+            <summary>WHERE CAN I GET IT NOW</summary>
+            <p>The game costs 7,49€</p>
+            <a href="https://store.steampowered.com/app/3527290/PEAK/" target="_blank"><p>HERE TO STEAM STORE</p></a>
+        </details>
+        <br>
+        <button class=button><a href="../openthis.html"><p>Go back</p></a></button>
+        <br>
+        <button class=modebutton onclick="switchmode()"><img id="mode" src="../pic/moon.png" width="50"></button>
+        <script>
+            let darkMode=localStorage.getItem("darkMode")==="true";
+            function update(){
+                if (darkMode){
+                    document.body.className="black";
+                    document.getElementById("mode").src="../pic/moon.png"
+                }else{
+                    document.body.className="white";
+                    document.getElementById("mode").src="../pic/sun.png"
+                }
+            }
+            function switchmode(){
+                darkMode=!darkMode
+                localStorage.setItem("darkMode", darkMode);
+                update()
+            }
+            update()
+        </script>
+    </body>
+</html>
